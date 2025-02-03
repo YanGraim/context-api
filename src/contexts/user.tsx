@@ -1,4 +1,4 @@
-import { createContext, ReactNode } from "react";
+import { createContext, ReactNode, useState } from "react";
 
 
 interface UserProviderProps {
@@ -12,9 +12,12 @@ type UserContextData = {
 
 export const UserContext = createContext({} as UserContextData);
 
-// proviver que vai envolver a aplicação
 
 function UserProvider({children}: UserProviderProps) {
+
+    const [aluno, setAluno] = useState("Yan Graim");
+    const [qtdAlunos, setQtdAlunos] = useState(40);
+
     return (
         <UserContext.Provider value={{aluno, qtdAlunos}}>
             {children}
