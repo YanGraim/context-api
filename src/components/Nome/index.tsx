@@ -1,9 +1,12 @@
 
+interface NomeProps {
+    nome: string;
+}
 
-export function Nome() {
+export function Nome({nome}: NomeProps) {
     return (
         <div>
-            <strong>Aluno: Yan</strong>
+            <strong>Aluno: {nome}</strong>
         </div>
     )
 }

@@ -1,8 +1,10 @@
+import { useState } from "react"
 import { Alunos } from "./components/Alunos"
-import { Nome } from "./components/Nome"
+
 
 function App() {
   
+  const [nome, setNome] = useState('Yan Graim')
 
   return (
     <div>
@@ -10,9 +12,7 @@ function App() {
       <br />
       <hr />
 
-      <Alunos/>
-      <br />
-      <Nome/>
+      <Alunos alunoNome={nome}/>
 
     </div>
   )
