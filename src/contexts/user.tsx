@@ -8,6 +8,7 @@ interface UserProviderProps {
 type UserContextData = {
     aluno: string;
     qtdAlunos: number;
+    mudaNome: (nome: string) => void;
 }
 
 export const UserContext = createContext({} as UserContextData);
@@ -18,8 +19,12 @@ function UserProvider({children}: UserProviderProps) {
     const [aluno, setAluno] = useState("Yan Graim");
     const [qtdAlunos, setQtdAlunos] = useState(40);
 
+    function mudaNome(nome: string) {
+        setAluno(nome);
+    }
+
     return (
-        <UserContext.Provider value={{aluno, qtdAlunos}}>
+        <UserContext.Provider value={{aluno, qtdAlunos, mudaNome}}>
             {children}
         </UserContext.Provider>
     )

@@ -6,11 +6,15 @@ import { UserContext } from "../../contexts/user";
 
 export function Alunos() {
 
-    const {qtdAlunos} = useContext(UserContext)
+    const {qtdAlunos, mudaNome} = useContext(UserContext)
 
     return (
         <div>
-            <strong>Quantidade de alunos: {qtdAlunos}</strong>
+            <h3>Quantidade de alunos: {qtdAlunos}</h3>
+            <button onClick={() => mudaNome("Wanessa Graim")}> 
+                Mudar nome
+            </button>
+            <br /> <br />
             <Nome/>
         </div>
     )
