@@ -1,12 +1,12 @@
+import { useContext } from "react";
+import { UserContext } from "../../contexts/user";
 
-interface NomeProps {
-    nome: string;
-}
+export function Nome() {
+    const {aluno} = useContext(UserContext);
 
-export function Nome({nome}: NomeProps) {
     return (
         <div>
-            <strong>Aluno: {nome}</strong>
+            <strong>Aluno: {aluno}</strong>
         </div>
     )
 }

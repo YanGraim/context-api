@@ -1,14 +1,17 @@
 import { Nome } from "../Nome";
 
-interface AlunoProps {
-    alunoNome: string;
-}
+import { useContext } from "react";
+import { UserContext } from "../../contexts/user";
 
-export function Alunos({alunoNome}: AlunoProps) {
+
+export function Alunos() {
+
+    const {qtdAlunos} = useContext(UserContext)
+
     return (
         <div>
-            <strong>Quantidade de alunos: 23</strong>
-            <Nome nome={alunoNome}/>
+            <strong>Quantidade de alunos: {qtdAlunos}</strong>
+            <Nome/>
         </div>
     )
 }
