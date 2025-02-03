@@ -1,5 +1,7 @@
-import { useState } from "react"
-import { Alunos } from "./components/Alunos"
+import { useState } from "react";
+import { Alunos } from "./components/Alunos";
+
+import UserProvider from "./contexts/user";
 
 
 function App() {
@@ -7,14 +9,14 @@ function App() {
   const [nome, setNome] = useState('Yan Graim')
 
   return (
-    <div>
-      <h1>Contex Api</h1>
-      <br />
-      <hr />
-
-      <Alunos alunoNome={nome}/>
-
-    </div>
+    <UserProvider>
+      <div>
+        <h1>Contex Api</h1>
+        <br />
+        <hr />
+        <Alunos alunoNome={nome}/>
+      </div>
+    </UserProvider>
   )
 }
 
