@@ -1,4 +1,5 @@
 import { Alunos } from "./components/Alunos";
+import { Footer } from "./components/Footer";
 
 import UserProvider from "./contexts/user";
 
@@ -12,6 +13,8 @@ function App() {
         <br />
         <hr />
         <Alunos/>
+
+        <Footer/>
       </div>
     </UserProvider>
   )

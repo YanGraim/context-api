@@ -1,9 +1,15 @@
+import { UserContext } from "../../contexts/user";
+import { useContext } from "react";
+
 export function Footer() {
+    const {qtdAlunos, novoAluno} = useContext(UserContext);
+
     return (
         <footer>
             <hr />
-            <h4>Alunos online na plataforma: 190</h4>
-            <button onClick={() => {}}>
+            <h3>Footer</h3>
+            <h4>Alunos online na plataforma: {qtdAlunos}</h4>
+            <button onClick={() => novoAluno()}>
                 Novo aluno
             </button>
         </footer>
